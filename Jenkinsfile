@@ -74,5 +74,40 @@ pipeline {
                 
             }
         }
+    
+        stage('Test_D') {
+            steps {
+                echo 'Test_D on project here!'
+                sayHello()
+                saySuccess()
+            }
+            post {
+                success {
+                    echo 'Succeeded in Test_D Stage.'
+                }
+                failure {
+                    echo 'Failed in Test_D Stage.'
+                }
+            }
+        } 
+        
+        stage('Test_E') {
+            steps {
+                echo 'Test_E on project here!'
+                sayHello()
+                saySuccess()
+            }
+            post {
+                success {
+                    echo 'Succeeded in Test_E Stage.'
+                }
+                failure {
+                    echo 'Failed in Test_E Stage.'
+                }
+            }
+        } 
+    
+    
+    
     }
 }
