@@ -25,6 +25,9 @@ pipeline {
         stage('Parallel Stage') {
             parallel {
                 stage('Test_A') {
+                    agent {
+                        label "Agent_Of_Test_A"
+                    }
                     steps {
                         echo 'Testing_A on project here!'
                         sayHello()
@@ -41,6 +44,9 @@ pipeline {
                 }
                 
                 stage('Test_B') {
+                    agent {
+                        label "Agent_Of_Test_B"
+                    }
                     steps {
                         echo 'Test_B on project here!'
                         sayHello()
@@ -57,6 +63,9 @@ pipeline {
                 }
                 
                 stage('Test_C') {
+                    agent {
+                        label "Agent_Of_Test_C"
+                    }
                     steps {
                         echo 'Test_C on project here!'
                         sayHello()
