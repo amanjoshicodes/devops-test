@@ -8,8 +8,8 @@ pipeline {
             steps {
                 echo 'Hello World'
                 sayHello()
-                saySuccess()
-//                 sayFailure()
+//                 saySuccess()
+                sayFailure()
             }
             post {
                 success {
