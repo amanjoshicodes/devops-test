@@ -9,7 +9,15 @@ pipeline {
                 echo 'Hello World'
                 sayHello()
                 saySuccess()
-                sayFailure()
+//                 sayFailure()
+            }
+            post {
+                success {
+                    echo 'Succeeded in Hello Stage.'
+                }
+                failure {
+                    echo 'Failed in Hello Stage.'
+                }
             }
         }
     }
