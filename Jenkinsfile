@@ -105,9 +105,55 @@ pipeline {
                     echo 'Failed in Test_E Stage.'
                 }
             }
-        } 
-    
-    
+        }
+        
+        stage('Build_Deliverable') {
+            steps {
+                echo 'Building Deliverables here!'
+                sayHello()
+                saySuccess()
+            }
+            post {
+                success {
+                    echo 'Succeeded in Build_Deliverable Stage.'
+                }
+                failure {
+                    echo 'Failed in Build_Deliverable Stage.'
+                }
+            }
+        }
+        
+        stage('Deploy_Dev') {
+            steps {
+                echo 'Deploying on Dev environment here!'
+                sayHello()
+                saySuccess()
+            }
+            post {
+                success {
+                    echo 'Succeeded in Deploy_Dev Stage.'
+                }
+                failure {
+                    echo 'Failed in Deploy_Dev Stage.'
+                }
+            }
+        }
+        
+        stage('Deploy_Prod') {
+            steps {
+                echo 'Deploying on Prod environment here!'
+                sayHello()
+                saySuccess()
+            }
+            post {
+                success {
+                    echo 'Succeeded in Deploy_Prod Stage.'
+                }
+                failure {
+                    echo 'Failed in Deploy_Prod Stage.'
+                }
+            }
+        }  
     
     }
 }
